@@ -1,0 +1,10 @@
+<div *ngFor="let emp of employee">
+    <p>ID: {{emp.id}}</p>
+    <p>First Name:{{emp.firstName}}</p>
+    <p>Last Name:{{emp.lastName}}</p>
+    <p>Email:{{emp.emailId}}</p>
+    <button (click) = "onDeleteEmployee(emp.id)">Delete</button>
+    <hr>
+</div>
+
+<!-- <app-input (submitForm) = "onSubmitForm($event)"></app-input> -->

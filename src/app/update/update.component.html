@@ -1,0 +1,13 @@
+<form (ngSubmit) = "onUpdateForm()" ngNativeValidate>
+    <label >Employee ID:</label><br/>
+    <input type = "number" id = "EmployeeID" name = "id" [(ngModel)] = "employee.id" name = "id" required><br/>
+    <label >First Name:</label><br/>
+    <input type = "text" id = "firstName" name = "firstName" [(ngModel)] = "employee.firstName" name = "firstName" required><br/>
+    <label >Last Name:</label><br/>
+    <input type = "text" id = "lastName" name = "lastName" [(ngModel)] = "employee.lastName" name = "lastName" required><br/>
+    <label >Email Address:</label><br/>
+    <input type = "text" id = "emailId" name = "emailId" [(ngModel)] = "employee.emailId" name = "emailId" required><br/>
+    <div class="button">
+        <button type = "submit">Update</button>
+    </div>
+</form>

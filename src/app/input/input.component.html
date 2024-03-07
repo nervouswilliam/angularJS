@@ -1,0 +1,26 @@
+<form (ngSubmit) = "onSubmitForm()" [formGroup]="form" ngNativeValidate>
+    <label >First Name:</label><br/>
+    <input type = "text"id = "firstName" formControlName="firstName" name = "firstName" placeholder="please input your first name" [(ngModel)] = "employee.firstName" /><br/>
+    <div *ngIf="f.firstName?.touched && f.firstName?.invalid">
+        <small class = "text-danger" *ngIf="f.firstName?.errors?.['required']">
+            please enter your first name
+        </small>
+    </div>
+  
+    <!-- <span [hidden] = "inputForm.firstName.length > 3">please input your name</span><br/> -->
+    <label >Last Name:</label><br/>
+    <input type = "text" id = "lastName" formControlName = "lastName" name = "lastName" placeholder="please input your last name" [(ngModel)] = "employee.lastName" required minlength="3"/><br/>
+    <div *ngIf="f.lastName?.touched && f.lastName?.invalid">
+        <small class = "text-danger" *ngIf="f.lastName?.errors?.['required']">
+            please enter your last name
+        </small>
+    </div>
+    <label >Email Address:</label><br/>
+    <input type = "email" id = "emailId" formControlName = "emailId"name = "emailId" placeholder="please input your email address" [(ngModel)] = "employee.emailId" required/><br/>
+    <div *ngIf="f.emailId?.touched && f.emailId?.invalid">
+        <small class = "text-danger" *ngIf="f.emailId?.errors?.['required']">
+            please enter your email address
+        </small>
+    </div>
+    <button type = "submit" value = "Submit">Input</button>
+</form>
