@@ -8,19 +8,13 @@ import { EmployeeService } from '../employee.service';
   styleUrl: './input.component.css'
 })
 export class InputComponent {
-  // employeeForm: FormGroup;
   @Output() createEmployee = new EventEmitter<any>();
   employee: any = {};
-  // employeeForm: FormGroup;
 
   constructor(
     private employeeService: EmployeeService,
     private formBuilder: FormBuilder
-  ){
-    // this.employeeForm = this.formBuilder.group({
-    //   firstname: ['', [Validators.required]]
-    // })
-  }
+  ){}
 
   form = new FormGroup({
     firstName: new FormControl('', Validators.required),
@@ -32,13 +26,6 @@ export class InputComponent {
   }
 
   onSubmitForm(): void{
-    // if(this.employeeForm.valid){
-    //   const employeeData = this.employeeForm .value;
-    //   this.createEmployee.emit(employeeData);
-    //   this.employeeForm.reset();      
-    // } else{
-    //   console.log("Form Validation Failed.");
-    // }
   
 
     this.employeeService.createEmployees(this.employee).subscribe(
