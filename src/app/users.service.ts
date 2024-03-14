@@ -15,8 +15,15 @@ export class usersService{
         return this.http.post<any[]>(this.apiUrl, userData, {headers});
     }
 
-    isValidUsers(userData: any[]): Observable<String[]>{
-        const headers = new HttpHeaders({'content-type': 'application/json'});
-        return this.http.post<any[]>(this.apiUrl, userData, {headers});
+    // isValidUsers(userData: any[]): Observable<String[]>{
+    //     const headers = new HttpHeaders({'content-type': 'application/json'});
+    //     return this.http.post<any[]>(this.apiUrl, userData, {headers});
+    // }
+
+    login(userCredentials: any[]): Observable<String[]>{
+        const headers = new HttpHeaders({'Content-Type' : 'application/json'});
+        const loginUrl = `${this.apiUrl}/login`;
+        return this.http.post<any[]>(loginUrl, userCredentials, {headers});
     }
+
 }

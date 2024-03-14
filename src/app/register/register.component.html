@@ -1,9 +1,9 @@
 <h1>Register Form</h1>
-<form (ngSubmit)="registerForm()" [formGroup]="form" ngNativeValidate>
+<form (ngSubmit)="registerForm()" name = registerForm method = "POST" [formGroup]="form" ngNativeValidate>
     <label>User Name:</label>
     <input type= "text" id="username" name = "username" formControlName="username" [(ngModel)] = "user.username" required/><br/>
     <label>Password: </label>
-    <input type="password" id="password" name="password" formControlName="password" [(ngModel)] = "user.password" required/><br/>
+    <input type="password" id="password" name="password" formControlName="password" [(ngModel)] = "user.password" required ng-minlength = "4"/><br/>
     <label>Confirm Password: </label>
     <input type="password" id="ConfirmPassword" name="ConfirmPassword" formControlName="ConfirmPassword" required/><br/>
     <p>Already have account? </p> <a href="/login">Login now</a>

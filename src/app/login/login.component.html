@@ -1,9 +1,18 @@
-<h1>Login Form</h1>
-<form (ngSubmit)="onSubmit()" [formGroup]="form" ngNativeValidate>
+<!-- <h1>Login Form</h1>
+<form (ngSubmit)="onSubmit()" name = "loginForm" ngNativeValidate>
     <label>User Name:</label>
     <input type= "text" id="userName" name = "userName" formControlName="userName" required/><br/>
     <label>Password: </label>
     <input type="password" id="password" name="password" formControlName="password" required/><br/>
     <p>Don't have account? </p> <a href="/register">register now</a>
-    <button>Login</button>
+    <button type = "submit">Login</button>
+</form> -->
+<h1>Login Form</h1>
+<form (ngSubmit)="onSubmit()" name = "loginForm" [formGroup]="form" ngNativeValidate>
+    <label>User Name:</label>
+    <input type= "text" id="username" name = "username" formControlName="username" [ngModel]="user.username" required/><br/>
+    <label>Password: </label>
+    <input type="password" id="password" name="password" formControlName="password" [ngModel]="user.password" required/><br/>
+    <p>Don't have account? </p> <a href="/register">register now</a>
+    <button type = "submit">Login</button>
 </form>
