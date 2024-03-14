@@ -1,27 +1,28 @@
+<app-navbar></app-navbar>
 <form (ngSubmit) = "onUpdateForm()" [formGroup]="form" ngNativeValidate>
     <label >Employee ID:</label><br/>
-    <input type = "number" id = "EmployeeID" name = "id" [(ngModel)] = "employee.id" required><br/>
+    <input type = "number" id = "EmployeeID" name = "id" formControlName="id" [(ngModel)] = "employee.id" required><br/>
     <div *ngIf="f.id?.touched && f.id?.invalid">
         <small class = "text-danger" *ngIf="f.id?.errors?.['required']">
             Please Enter Your Employee ID
         </small>
     </div>
     <label >First Name:</label><br/>
-    <input type = "text" id = "firstName" name = "firstName" [(ngModel)] = "employee.firstName"  required minlength="3"><br/>
+    <input type = "text" id = "firstName" name = "firstName" formControlName="firstName" [(ngModel)] = "employee.firstName"  required minlength="3"><br/>
     <div *ngIf="f.firstName?.touched && f.firstName?.invalid">
         <small class = "text-danger" *ngIf="f.firstName?.errors?.['required']">
             Please enter Your First Name
         </small>
     </div>
     <label >Last Name:</label><br/>
-    <input type = "text" id = "lastName" name = "lastName" [(ngModel)] = "employee.lastName" placeholder="enter your last name" minlength="3"><br/>
+    <input type = "text" id = "lastName" name = "lastName" formControlName="lastName" [(ngModel)] = "employee.lastName" placeholder="enter your last name" minlength="3"><br/>
     <div *ngIf="f.lastName?.touched && f.lastName?.invalid">
         <small class = "text-danger" *ngIf="f.lastName?.errors?.['required']">
             Please Enter Your Last Name
         </small>
     </div>
     <label >Email Address:</label><br/>
-    <input type = "email" id = "emailId" name = "emailId" [(ngModel)] = "employee.emailId" required minlength="3"><br/>
+    <input type = "email" id = "emailId" name = "emailId" formControlName = "emailId" [(ngModel)] = "employee.emailId" required minlength="3"><br/>
     <div *ngIf="f.emailId?.touched && f.emailId?.invalid">
         <small class = "text-danger" *ngIf="f.emailId?.errors?.['required']">
             Please Enter Your Email Address

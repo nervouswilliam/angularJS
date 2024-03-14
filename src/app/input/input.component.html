@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <form (ngSubmit) = "onSubmitForm()" [formGroup]="form" ngNativeValidate>
     <label >First Name:</label><br/>
     <input type = "text"id = "firstName" formControlName="firstName" name = "firstName" placeholder="please input your first name" [(ngModel)] = "employee.firstName" /><br/>

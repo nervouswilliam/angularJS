@@ -11,3 +11,12 @@
 .navbar-links li a{
     text-decoration: none;
 }
+
+.logout{
+    position:fixed;
+    right: 1rem;
+}
+
+.logout a{
+    color: red;
+}
