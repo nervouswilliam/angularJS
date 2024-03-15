@@ -13,6 +13,9 @@
     <input type= "text" id="username" name = "username" formControlName="username" [ngModel]="user.username" required/><br/>
     <label>Password: </label>
     <input type="password" id="password" name="password" formControlName="password" [ngModel]="user.password" required/><br/>
-    <p>Don't have account? </p> <a href="/register">register now</a>
+    <div class="register">
+        <p>Don't have account? </p> <a href="/register">register now</a>
+    </div>
+    <p *ngIf = "loginError" class = "error-message">Invalid Username or Password</p>
     <button type = "submit">Login</button>
 </form>

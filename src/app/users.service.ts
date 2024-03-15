@@ -2,6 +2,12 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
+interface User{
+    id: number;
+    username: string;
+    password: string;
+}
+
 @Injectable({
     providedIn : "root"
 })
@@ -24,6 +30,11 @@ export class usersService{
         const headers = new HttpHeaders({'Content-Type' : 'application/json'});
         const loginUrl = `${this.apiUrl}/login`;
         return this.http.post<any[]>(loginUrl, userCredentials, {headers});
+    }
+
+    getUserById(userId: number): Observable<String[]>{
+        const userUrl = `${this.apiUrl}/${userId}`;
+        return this.http.get<any[]>(userUrl);
     }
 
 }

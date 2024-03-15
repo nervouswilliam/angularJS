@@ -6,7 +6,9 @@
     <input type="password" id="password" name="password" formControlName="password" [(ngModel)] = "user.password" required ng-minlength = "4"/><br/>
     <label>Confirm Password: </label>
     <input type="password" id="ConfirmPassword" name="ConfirmPassword" formControlName="ConfirmPassword" required/><br/>
-    <p>Already have account? </p> <a href="/login">Login now</a>
+    <div class = "login">
+        <p>Already have account? </p> <a href="/login">Login now</a>
+    </div>
     <button type = "submit" (click) ="registerForm()">Register</button>
     
 </form>

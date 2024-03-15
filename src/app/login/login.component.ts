@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { usersService } from '../users.service';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   // loginForm: FormGroup
   constructor(
     private UserService: usersService,
@@ -21,11 +21,19 @@ export class LoginComponent {
     // });
   }
   user: any = {}; 
+  loginError = false;
 
   form : FormGroup = new FormGroup({
     username: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)
-  })
+  });
+
+  isLoggedin = false;
+  isLoginFailed = false;
+  errorMsg = '';
+  roles: string[] = [];
+
+  
 
   get f(){
     return this.form.controls;
@@ -42,6 +50,7 @@ export class LoginComponent {
         this.redirectToHome();
       }, error =>{
         console.error('Login Failed:', error);
+        this.loginError = true;
       }
     )
 

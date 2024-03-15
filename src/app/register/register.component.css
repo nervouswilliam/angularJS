@@ -1,0 +1,10 @@
+.login{
+    display: flex;
+}
+
+.login a{
+    display: flex;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    text-decoration: none;
+}
